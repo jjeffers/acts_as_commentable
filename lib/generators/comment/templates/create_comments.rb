@@ -1,6 +1,6 @@
-class CreateComments < ActiveRecord::Migration
+class CreateAACComments < ActiveRecord::Migration
   def self.up
-    create_table :comments do |t|
+    create_table :aac_comments do |t|
       t.string :title, :limit => 50, :default => "" 
       t.text :comment
       t.references :commentable, :polymorphic => true
@@ -9,12 +9,12 @@ class CreateComments < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :comments, :commentable_type
-    add_index :comments, :commentable_id
-    add_index :comments, :user_id
+    add_index :aac_comments, :commentable_type
+    add_index :aac_comments, :commentable_id
+    add_index :aac_comments, :user_id
   end
 
   def self.down
-    drop_table :comments
+    drop_table :aac_comments
   end
 end
