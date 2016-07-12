@@ -12,7 +12,7 @@ class CommentGenerator < Rails::Generators::Base
   end
 
   def create_model_file
-    template "comment.rb", "app/models/comment.rb"
-    migration_template "create_comments.rb", "db/migrate/create_comments.rb"
+    template "comment.rb", "app/models/aac_comment.rb"
+    migration_template "create_comments.rb", "db/migrate/create_aac_comments.rb"
   end
 end
